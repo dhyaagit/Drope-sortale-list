@@ -1,14 +1,1 @@
-# Drope-sortale-list
-
-jglkg
-kgiuk
-ugiuyf
-hgdjgc
-hgdfayf
-adgfshj
-jfou
-jgouo
-yeymed
-dhtaa
-dyaaa
-ghfd
+# Toast Notification
