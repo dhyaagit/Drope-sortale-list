@@ -235,7 +235,7 @@ li.hide {
     text-decoration: underline #7245fa;
     transition: all 0.3s;
     margin: 0;
-cursor: pointer;
+    cursor: pointer;
 }
 
 .fa-linkedin-in{
