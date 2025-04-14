@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    color: var(--Color-Normal);
+    outline: none;
+}
+
+:root {
+    --Color-main: rgb(15, 15, 15);
+    --Color-Normal: #fff;
+    --Color-Button: #7a7474;
+    --Bg-Button: #1C1C1C;
+    --Boder: #3E3E3E;
+    --Color-Basic: #469cff;
+    --Boder-Basic: #469cffa2;
+    --Bg-correct: #30ff41a8;
+    --boder-correct: #67ff39;
+    --Bg-incorrect: #ff3030cc;
+    --Boder-incorrect: #ff3030;
+    --boder-Warning: #ffe030;
+    --Bg-Warning: #ffe030ab;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--Bg-Button);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 8px 20px;
+    border-radius: 7px;
+    font-size: 1.2rem;
+    background-color: var(--Boder-Basic);
+    border: 1px solid var(--Color-Basic);
+    cursor: pointer;
+}
+
+.Success {
+    background-color: var(--Bg-correct);
+    border: 1px solid var(--boder-correct);
+}
+
+.Error {
+    background-color: var(--Bg-incorrect);
+    border: 1px solid var(--Boder-incorrect);
+}
+
+.Warning {
+    background-color: var(--Bg-Warning);
+    border: 1px solid var(--boder-Warning);
+}
+
+ul {
+    position: fixed;
+    top: 10px;
+    right: 30px;
+}
+
+li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background-color: var(--Bg-Button);
+    border: 1px solid var(--Boder);
+    padding: 14px 20px;
+    border-radius: 7px;
+    margin-top: 10px;
+    overflow: hidden;
+    animation: show_toast 0.3s ease-in-out forwards;
+}
+
+@keyframes show_toast {
+    0% {
+        transform: translateX(100%);
+    }
+
+    40% {
+        transform: translateX(-5%);
+    }
+
+    80% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+li div span {
+    font-size: 1.2rem;
+}
+
+li div i {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.fa-xmark {
+    font-size: 1.2rem;
+    color: var(--Color-Button);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.fa-xmark:hover {
+    color: #d8d8d8;
+}
+
+#SuccessToast div i {
+    color: var(--boder-correct);
+}
+
+#ErrorToast div i {
+    color: var(--Boder-incorrect);
+}
+
+#WarningToast div i {
+    color: var(--boder-Warning);
+}
+
+#InfoToast div i {
+    color: var(--Color-Basic);
+}
+
+li::before {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    animation: pro 5s ease forwards;
+}
+
+@keyframes pro {
+    From {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+#SuccessToast::before {
+    background-color: var(--boder-correct);
+}
+
+#ErrorToast::before {
+    background-color: var(--Boder-incorrect);
+}
+
+#WarningToast::before {
+    background-color: var(--boder-Warning);
+}
+
+#InfoToast::before {
+    background-color: var(--Color-Basic);
+}
+
+li.hide {
+    animation: hide 0.3s ease forwards;
+}
+
+@keyframes hide {
+    0% {
+        transform: translateX(-10px);
+    }
+
+    40% {
+        transform: translateX(0%);
+    }
+
+    80% {
+        transform: translateX(-5%);
+    }
+
+    100% {
+        transform: translateX(calc(100% + 30px));
+    }
+}
+
+.Buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+@media only screen and (max-width:500px) {
+    body{
+        padding-inline: 20px;
+    }
+    ul{
+        left: 20px;
+        right: 0px;
+    }
+    li div span{
+        font-size: 1.1rem;
+    }
+    li div i {
+        font-size: 1.2rem;
+        
+    }
+}
+
+
+.dhyaa {
+    color: var(--Color-Normal);
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.dhyaa span {
+    color: var(--Color-Normal);
+    text-decoration: underline #7245fa;
+    transition: all 0.3s;
+    margin: 0;
+cursor: pointer;
+}
+
+.fa-linkedin-in{
+    color: var(--Color-Button);
+    background-color: var(--Bg-Button);
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    border: 1px solid var(--Boder);
+    cursor: pointer;
+    margin: 0;
+    transition: all 0.3s;
+}
+
+.fa-linkedin-in:hover {
+    color: var(--Color-Normal);
+    margin: 0;
+    background-color: #7245fa69;
+    border: 1px solid #7245fa;
+}
+
+.Title{
+    font-weight: 400;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
